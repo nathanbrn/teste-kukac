@@ -1,0 +1,31 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Car {
+  id String @id @default(cuid())
+  model String
+  yearMan Int
+  amountPorts Int
+  brand String
+  createdAt DateTime @default(now())
+
+  @@map("cars")
+}
+
+model Motorbike {
+  id String @id @default(cuid())
+  model String
+  yearMan Int
+  brand String
+  whells Int
+  passengers Int
+  createdAt DateTime @default(now())
+
+  @@map("motorbikes")
+}
