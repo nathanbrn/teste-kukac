@@ -6,4 +6,4 @@
 
 ### npm run dev | yarn dev - Para iniciar a aplicação
 
-#### O servidor irá rodar na porta 3000
+### O servidor irá rodar na porta 3001

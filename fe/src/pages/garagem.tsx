@@ -5,9 +5,10 @@ import { Car } from '@/types/cars.types';
 import { Motorbike } from '@/types/motorbikes.types';
 import { api } from '@/utils/api';
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material';
-import { useEffect, useState } from 'react';
-import ImageGaragem from '../assets/garagem.svg';
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
+import { toast } from 'react-toastify';
+import ImageGaragem from '../assets/garagem.svg';
 
 export default function Garagem() {
   const [open, setOpen] = useState(false);
@@ -21,11 +22,15 @@ export default function Garagem() {
 
   useEffect(() => {
     (async () => {
-      const cars = await api.get('/vehicles/cars');
-      const motorbikes = await api.get('/vehicles/motorbikes');
+      try {
+        const cars = await api.get('/vehicles/cars');
+        const motorbikes = await api.get('/vehicles/motorbikes');
 
-      setCars(cars.data);
-      setMotors(motorbikes.data);
+        setCars(cars.data);
+        setMotors(motorbikes.data);
+      } catch (err) {
+        toast.error('Erro ao carregar veículos');
+      }
     })();
   }, [cars, motorbikes]);
 
