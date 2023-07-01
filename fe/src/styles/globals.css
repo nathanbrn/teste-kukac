@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  font-family: 'Roboto', sans-serif;
+  background-color: #0b110d;
+  padding: 10px 0;
+}
+
+header {
+  width: 80%;
+}
+
+main {
+  width: 80%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffffff;
+}
+
+.vertical-separator::after {
+  content: "";
+  display: inline-block;
+  width: 0.5px;
+  height: 100%;
+  background-color: #cacaca;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+@media screen and (max-width: 1024px) {
+  .tableContainer {
+    flex-wrap: wrap;
+  }
+
+  .menu {
+    width: 100%;
+  }
+
+  main, header {
+    width: 125%;
+  }
+
+  body {
+    width: 100%;
+  }
+
+  .tableGaragemContainer {
+    padding: 0 8px;
+    width: 90%;
+  }
+
+  .tableGaragem {
+    width: 90%;
+  }
+
+  .vertical-separator {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .tableContainer {
+    flex-wrap: wrap;
+  }
+
+  .menu {
+    width: 100%;
+  }
+
+  .tableGaragemContainer {
+    padding: 0 8px;
+    width: 90%;
+  }
+
+  .tableGaragem {
+    width: 90%;
+  }
+
+  .vertical-separator {
+    display: none;
+  }
+}
